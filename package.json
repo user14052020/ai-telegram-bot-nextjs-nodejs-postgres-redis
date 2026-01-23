@@ -1,0 +1,7 @@
+{
+  "name": "chat-analytics",
+  "private": true,
+  "scripts": {
+    "test": "npm --prefix bot test"
+  }
+}

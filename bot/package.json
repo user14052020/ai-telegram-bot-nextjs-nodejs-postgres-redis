@@ -1,0 +1,26 @@
+{
+  "name": "chat-analytics-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc && tsc-alias",
+    "start": "node dist/index.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "dotenv": "16.4.5",
+    "pg": "8.11.5",
+    "redis": "4.7.0",
+    "telegraf": "4.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.12",
+    "@types/pg": "8.10.9",
+    "tsc-alias": "1.8.10",
+    "tsx": "4.15.5",
+    "typescript": "5.5.4",
+    "vitest": "1.6.0"
+  }
+}
