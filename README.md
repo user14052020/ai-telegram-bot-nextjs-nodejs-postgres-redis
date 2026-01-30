@@ -1,4 +1,6 @@
 # Telegram-бот для аналитики группового чата
+<img width="1401" height="900" alt="539565329-ad63e511-106f-44dd-899c-88b5233bca23" src="https://github.com/user-attachments/assets/9bca58b6-6e42-4afc-aaf8-772f1d921f41" />
+<img width="1046" height="641" alt="539565353-3433b17f-7af9-4a1a-856c-424b48b75e4f" src="https://github.com/user-attachments/assets/c3df7001-c12b-49ab-beff-80c5bada1f11" />
 
 ## 1. Запуск проекта
 
