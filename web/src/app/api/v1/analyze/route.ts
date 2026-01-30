@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { analyzeByUsername } from '@/lib/services/analysis';
-import { ServiceError, ValidationError } from '@/lib/services/errors';
+import { analyzeByUsername } from '@/features/user-analysis/server/analyze-user';
+import { ServiceError, ValidationError } from '@/shared/lib/errors';
 
 export const runtime = 'nodejs';
 

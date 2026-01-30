@@ -98,67 +98,6 @@ body {
   margin-bottom: 24px;
 }
 
-.form {
-  display: grid;
-  gap: 16px;
-  margin-bottom: 20px;
-}
-
-.field {
-  display: grid;
-  gap: 8px;
-  font-weight: 500;
-}
-
-.field span {
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-.field input {
-  padding: 14px 16px;
-  border-radius: 12px;
-  border: 1px solid rgba(31, 42, 51, 0.15);
-  font-size: 1rem;
-  background: white;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
-}
-
-.field input:focus {
-  outline: none;
-  border-color: var(--accent-2);
-  box-shadow: 0 0 0 3px rgba(44, 111, 107, 0.2);
-}
-
-button {
-  padding: 14px 18px;
-  border-radius: 12px;
-  border: none;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  background: linear-gradient(120deg, var(--accent), #f2a654);
-  color: #fff8f0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(214, 114, 63, 0.35);
-}
-
-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.7;
-  box-shadow: none;
-}
-
-.error {
-  color: #b23a2b;
-  font-weight: 500;
-  margin-bottom: 16px;
-}
-
 .result {
   border-top: 1px solid rgba(31, 42, 51, 0.08);
   padding-top: 20px;
@@ -198,10 +137,6 @@ button:disabled {
 @media (max-width: 600px) {
   .panel {
     padding: 28px 20px;
-  }
-
-  button {
-    width: 100%;
   }
 }
 

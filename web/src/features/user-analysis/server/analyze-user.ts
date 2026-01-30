@@ -1,9 +1,9 @@
-import { MessageModel } from '@/lib/models/messageModel';
-import { UserModel } from '@/lib/models/userModel';
-import { formatUserLabel } from '@/lib/utils/format';
-import { generateWithGemini } from '@/lib/services/gemini';
-import { ExternalServiceError, NotFoundError } from '@/lib/services/errors';
-import { config } from '@/lib/config';
+import { MessageModel } from '@/entities/message/model/messageModel';
+import { UserModel } from '@/entities/user/model/userModel';
+import { formatUserLabel } from '@/shared/lib/format';
+import { generateWithGemini } from '@/shared/api/gemini';
+import { ExternalServiceError, NotFoundError } from '@/shared/lib/errors';
+import { config } from '@/shared/config';
 
 const buildPrompt = (params: {
   displayName: string;

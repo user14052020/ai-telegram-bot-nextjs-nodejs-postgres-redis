@@ -1,5 +1,5 @@
-import type { UserNameLike } from '@/lib/types/user';
-export type { UserNameLike } from '@/lib/types/user';
+import type { UserNameLike } from '@/entities/user/model/types';
+export type { UserNameLike } from '@/entities/user/model/types';
 
 export const formatUserLabel = (user: UserNameLike): string => {
   if (user.username) {

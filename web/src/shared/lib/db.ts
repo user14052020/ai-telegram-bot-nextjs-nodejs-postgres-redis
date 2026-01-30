@@ -1,5 +1,5 @@
 import { Pool } from 'pg';
-import { config } from '@/lib/config';
+import { config } from '@/shared/config';
 
 const poolConfig = config.databaseUrl
   ? { connectionString: config.databaseUrl }

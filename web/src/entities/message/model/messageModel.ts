@@ -1,5 +1,5 @@
-import { pool } from '@/lib/db';
-import type { MessageRecord } from '@/lib/types/message';
+import { pool } from '@/shared/lib/db';
+import type { MessageRecord } from '@/entities/message/model/types';
 
 export class MessageModel {
   static async getRecentMessagesByUser(

@@ -1,5 +1,5 @@
-import { pool } from '@/lib/db';
-import type { UserRecord } from '@/lib/types/user';
+import { pool } from '@/shared/lib/db';
+import type { UserRecord } from '@/entities/user/model/types';
 
 export class UserModel {
   static async findByUsername(username: string): Promise<UserRecord | null> {

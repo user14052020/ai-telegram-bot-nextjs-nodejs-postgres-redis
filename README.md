@@ -25,12 +25,36 @@ npm install
 npm run dev
 ```
 
+## UI (Mantine)
+
+В `web/` подключен Mantine (UI‑компоненты + хуки): `@mantine/core` и `@mantine/hooks`.
+Интеграция выполнена через импорт `@mantine/core/styles.css` и провайдер `MantineProvider`
+в `web/src/app/layout.tsx` + `web/src/app/providers.tsx`. Компоненты Mantine используются
+в виджете `web/src/widgets/user-analysis-panel/ui/UserAnalysisPanel.tsx`.
+
+Если добавляете дополнительные пакеты Mantine (например, `@mantine/notifications`), подключите их CSS
+в `layout.tsx` аналогично.
+
+## FSD (Feature‑Sliced Design) в `web/`
+
+Структура `web/src/` приведена к слоям FSD (слой `pages` хранится в `pages-layer`):
+
+- `app/` — инициализация приложения, провайдеры, глобальные стили, маршрутизация Next.js.
+- `pages/` — страницы (в нашем случае `home`). В Next.js App Router эта директория зарезервирована,
+  поэтому слой `pages` размещен как `web/src/pages-layer/`.
+- `widgets/` — крупные UI‑блоки страницы (панель анализа пользователя).
+- `features/` — пользовательские сценарии и бизнес‑логика (запрос анализа пользователя).
+- `entities/` — доменные сущности и их модели (user/message).
+- `shared/` — общие утилиты, конфиги, доступ к внешним API и БД.
+
+Важно: `app/` — это технический слой Next.js, но по FSD он соответствует слою инициализации приложения.
+
 ## 2. Архитектура
 
 - `docker-compose.yml` поднимает `postgres`, `redis`, `bot`, `web`.
 - `db/init.sql` содержит схему БД.
 - `bot/` — Node.js + TypeScript + Telegraf. Чистые SQL-запросы через `pg`.
-- `web/` — Next.js приложение с одной страницей и API-роутом для анализа.
+- `web/` — Next.js приложение (App Router) с FSD‑структурой и API‑роутом для анализа.
 - `models/` в боте инкапсулируют SQL-запросы по таблицам.
 - Кэш статистики хранится в Redis.
 - API версионируется через `/api/v1`, есть healthcheck `/api/v1/health`.
@@ -90,7 +114,8 @@ npm run dev
 npm test
 ```
 
-Используется Vitest, тесты изолированы и не требуют поднятия БД/Redis.
+Используется Vitest. Тесты изолированы и не требуют поднятия БД/Redis: зависимости (`pg`, `redis`, модели)
+замоканы на уровне сервисов.
 
 ## Логи
 
@@ -142,6 +167,7 @@ nohup ./scripts/monitor-health.sh > monitor-health.log 2>&1 &
 - Node.js + TypeScript
 - Telegraf
 - Next.js
+- Mantine
 - PostgreSQL
 - Redis
 - Docker Compose
